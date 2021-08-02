@@ -204,17 +204,17 @@ header {
     font-style: italic;
   }
 
-  // CONTENT - OUTSET (FIRST SECTION)
+  // CONTENT OUTSET (FIRST SECTION)
   .outset > p {
-    margin: 2em 0 2em 0;
+    margin: 3em 0 2em 0;
   }
 
-  .outset > img {
+  .outset > .floating-image {
     width: 100%;
   }
 
-  // CONTENT - FLOATING IMAGE
-  .content img {
+  // CONTENT FLOATING IMAGE
+  .content .floating-image {
     @include phone-view {
       width: 100%;
       margin-bottom: 1em;
@@ -230,6 +230,59 @@ header {
       float: right;
     }
   }
+
+  // CONTENT VIDEO GALLERY
+  .video-gallery {
+    display: grid;
+    column-gap: 1em;
+    justify-items: center;
+    margin: 3em 0 2em 0;
+
+    // VIDEO GALLERY MEDIA QUERIES
+    @include phone-view {
+      grid-template-columns: 1fr;
+      padding: 0 2em 0 2em;
+      margin: 1em;
+    }
+    @include ipad-view {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include desktop-view {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .thumbnail {
+      @include flex-center;
+      height: auto;
+    }
+
+    p.description {
+      text-align: center;
+      padding: 0.5em;
+    }
+
+    a {
+      position: relative;
+    }
+
+    .fa {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 1em;
+      height: 1em;
+      font-size: $font-size-headline;
+      border-radius: 50%;
+      color: $primary-headline-color;
+      z-index: 1;
+      transition: all linear 1s;
+    }
+
+    .thumbnail:hover .fa {
+      transform: translate(-50%, -50%) scale(2);
+    }
+  }
 }
 
 footer {
@@ -238,7 +291,6 @@ footer {
   width: 100%;
   height: 7em;
   background-color: $secondary-background-color;
-  margin-top: 2em;
 
   // SOCIAL MEDIA ICONS
   > .fa {
@@ -284,6 +336,6 @@ footer {
     left: 0;
     width: inherit;
     height: inherit;
-    background-color: rgb(0, 0, 0, 0.6);
+    background-color: rgb(0, 0, 0, 0.5);
   }
 }

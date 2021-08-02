@@ -153,30 +153,82 @@ header > .header-image {
   font-style: italic;
 }
 .content-wrapper .outset > p {
-  margin: 2em 0 2em 0;
+  margin: 3em 0 2em 0;
 }
-.content-wrapper .outset > img {
+.content-wrapper .outset > .floating-image {
   width: 100%;
 }
 @media (max-width: 480px) {
-  .content-wrapper .content img {
+  .content-wrapper .content .floating-image {
     width: 100%;
     margin-bottom: 1em;
   }
 }
 @media (min-width: 481px) {
-  .content-wrapper .content img {
+  .content-wrapper .content .floating-image {
     width: 100%;
     margin-bottom: 1em;
   }
 }
 @media (min-width: 769px) {
-  .content-wrapper .content img {
+  .content-wrapper .content .floating-image {
     width: 10em;
     height: 10em;
     margin: 1em;
     float: right;
   }
+}
+.content-wrapper .video-gallery {
+  display: grid;
+  column-gap: 1em;
+  justify-items: center;
+  margin: 3em 0 2em 0;
+}
+@media (max-width: 480px) {
+  .content-wrapper .video-gallery {
+    grid-template-columns: 1fr;
+    padding: 0 2em 0 2em;
+    margin: 1em;
+  }
+}
+@media (min-width: 481px) {
+  .content-wrapper .video-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 769px) {
+  .content-wrapper .video-gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.content-wrapper .video-gallery .thumbnail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+.content-wrapper .video-gallery p.description {
+  text-align: center;
+  padding: 0.5em;
+}
+.content-wrapper .video-gallery a {
+  position: relative;
+}
+.content-wrapper .video-gallery .fa {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1em;
+  height: 1em;
+  font-size: 3.3em;
+  border-radius: 50%;
+  color: white;
+  z-index: 1;
+  transition: all linear 1s;
+}
+.content-wrapper .video-gallery .thumbnail:hover .fa {
+  transform: translate(-50%, -50%) scale(2);
 }
 
 footer {
@@ -187,7 +239,6 @@ footer {
   width: 100%;
   height: 7em;
   background-color: #e6e6e6;
-  margin-top: 2em;
 }
 footer > .fa {
   display: flex;
@@ -233,7 +284,7 @@ footer > .fa:hover {
   left: 0;
   width: inherit;
   height: inherit;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 /*# sourceMappingURL=styles.css.map */
