@@ -4,12 +4,13 @@ $secondary-background-color: rgb(230, 230, 230);
 
 $primary-headline-color: rgb(255, 255, 255);
 $secondary-headline-color: rgb(0, 0, 0);
-
 $primary-text-color: rgb(105, 105, 105);
 $secondary-text-color: rgb(0, 0, 0);
 
 $icon-color: rgb(230, 230, 230);
 $icon-background-color: rgb(105, 105, 105);
+
+$logo-color: rgb(255, 1, 1);
 
 // VARIABLES FOR FONT SIZES
 $font-size-headline: 3.3em;
@@ -114,8 +115,49 @@ header {
 
   // HEADER NAV
   > nav {
+    @include flex-center;
+    flex-flow: row nowrap;
     width: 100%;
-    height: 4em;
+    height: 5em;
+    padding: 0 1em 0 1em;
+
+    @include phone-view {
+      flex-flow: column nowrap;
+      height: auto;
+      padding: 1em;
+    }
+
+    // NAV LOGO
+    .logo {
+      margin: 0;
+      flex-grow: 1;
+
+      @include phone-view {
+        flex-grow: 0;
+        margin-bottom: 0.3em;
+      }
+    }
+
+    .logo > img {
+      margin-top: 0.2em;
+      height: 3em;
+    }
+
+    // NAV LINKS
+    a {
+      display: block;
+      font-weight: bold;
+      text-decoration: none;
+      margin: 0 1em 0 1em;
+
+      @include phone-view {
+        margin: 0.2em;
+      }
+
+      &:hover {
+        color: $logo-color;
+      }
+    }
   }
 
   // HEADER IMAGE

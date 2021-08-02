@@ -61,8 +61,48 @@ header {
   }
 }
 header > nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row nowrap;
   width: 100%;
-  height: 4em;
+  height: 5em;
+  padding: 0 1em 0 1em;
+}
+@media (max-width: 480px) {
+  header > nav {
+    flex-flow: column nowrap;
+    height: auto;
+    padding: 1em;
+  }
+}
+header > nav .logo {
+  margin: 0;
+  flex-grow: 1;
+}
+@media (max-width: 480px) {
+  header > nav .logo {
+    flex-grow: 0;
+    margin-bottom: 0.3em;
+  }
+}
+header > nav .logo > img {
+  margin-top: 0.2em;
+  height: 3em;
+}
+header > nav a {
+  display: block;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 0 1em 0 1em;
+}
+@media (max-width: 480px) {
+  header > nav a {
+    margin: 0.2em;
+  }
+}
+header > nav a:hover {
+  color: #ff0101;
 }
 header > .header-image {
   display: flex;
