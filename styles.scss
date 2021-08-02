@@ -1,0 +1,39 @@
+// VARIABLES
+$background-color: rgb(255, 255, 255);
+$font-color: rgb(0, 0, 0);
+
+$font-size-headline: 72px;
+$font-size-perex: 24px;
+$font-size-default: 20px;
+
+// MIXIN
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// GLOBAL STYLES
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: $font-size-default;
+}
+
+h1 {
+  font-size: $font-size-headline;
+}
+
+h2 {
+  font-size: $font-size-perex;
+}
+
+// @include flex-center;
