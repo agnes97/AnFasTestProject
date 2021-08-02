@@ -1,10 +1,16 @@
 // VARIABLES
 $background-color: rgb(255, 255, 255);
-$font-color: rgb(255, 255, 255);
+
+$primary-headline-color: rgb(255, 255, 255);
+$secondary-headline-color: rgb(0, 0, 0);
+$primary-text-color: rgb(105, 105, 105);
+$secondary-text-color: rgb(0, 0, 0);
 
 $font-size-headline: 3em;
 $font-size-perex: 2em;
 $font-size-default: 1em;
+
+$blur-value: 5px;
 
 // MEDIA QUERIES VIA MIXINS
 @mixin phone-view {
@@ -32,6 +38,14 @@ $font-size-default: 1em;
   align-items: center;
 }
 
+@mixin blurred-image {
+  filter: blur($blur-value);
+  -webkit-filter: blur($blur-value);
+  -moz-filter: blur($blur-value);
+  -o-filter: blur($blur-value);
+  -ms-filter: blur($blur-value);
+}
+
 // GLOBAL STYLES
 html {
   box-sizing: border-box;
@@ -48,27 +62,36 @@ body {
   margin: 0;
   background-color: $background-color;
   font-size: $font-size-default;
-  color: $font-color;
+  color: $primary-text-color;
 }
 
 main {
+  @include flex-center;
+  flex-flow: column wrap;
   width: inherit;
 }
 
 h1 {
   font-size: $font-size-headline;
+  color: $primary-headline-color;
   text-align: center;
   z-index: 1; // for visibility over image overlay
 }
 
 h2 {
   font-size: $font-size-perex;
+  color: $secondary-headline-color;
   text-align: center;
+}
+
+a {
+  color: $secondary-text-color;
 }
 
 // CLASSES
 header {
   min-width: 100%;
+  margin-bottom: 4em;
 
   // HEADER MEDIA QUERIES
   @include phone-view {
@@ -95,6 +118,82 @@ header {
   }
 }
 
+// CONTENT OF THE PAGE
+.content-wrapper {
+  @include flex-center;
+  flex-flow: column wrap;
+  width: 100%;
+
+  // CONTENT MEDIA QUERIES
+  > section {
+    @include phone-view {
+      width: 100%;
+    }
+    @include ipad-view {
+      width: 80%;
+    }
+    @include desktop-view {
+      width: 65%;
+    }
+  }
+
+  // CONTENT TEXT
+  p {
+    @include phone-view {
+      padding: 0 10% 0 10%;
+    }
+    @include ipad-view {
+      padding: 0 20% 0 20%;
+    }
+    @include desktop-view {
+      padding: 0 30% 0 30%;
+    }
+  }
+
+  .italic {
+    font-style: italic;
+  }
+
+  // CONTENT - OUTSET (FIRST SECTION)
+  .outset > p {
+    margin: 2em 0 2em 0;
+  }
+
+  .outset > img {
+    width: 100%;
+  }
+
+  // CONTENT - FLOATING IMAGE
+  .content img {
+    @include phone-view {
+      width: 100%;
+      margin-bottom: 1em;
+    }
+    @include ipad-view {
+      width: 100%;
+      margin-bottom: 1em;
+    }
+    @include desktop-view {
+      width: 10em;
+      height: 10em;
+      margin: 1em;
+      float: right;
+    }
+  }
+}
+
+// BLURRED IMAGE
+.blurred-image {
+  overflow: hidden;
+
+  > img {
+    @include blurred-image;
+    width: 105%;
+    height: 105%;
+    margin: -5%;
+  }
+}
+
 // IMAGE OVERLAY
 .overlay {
   position: relative;
@@ -108,6 +207,6 @@ header {
     left: 0;
     width: inherit;
     height: inherit;
-    background-color: rgb(0, 0, 0, 0.7);
+    background-color: rgb(0, 0, 0, 0.6);
   }
 }

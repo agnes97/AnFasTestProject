@@ -13,26 +13,37 @@ body {
   margin: 0;
   background-color: white;
   font-size: 1em;
-  color: white;
+  color: dimgray;
 }
 
 main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
   width: inherit;
 }
 
 h1 {
   font-size: 3em;
+  color: white;
   text-align: center;
   z-index: 1;
 }
 
 h2 {
   font-size: 2em;
+  color: black;
   text-align: center;
+}
+
+a {
+  color: black;
 }
 
 header {
   min-width: 100%;
+  margin-bottom: 4em;
 }
 @media (max-width: 480px) {
   header {
@@ -61,6 +72,87 @@ header > .header-image {
   background: url("/assets/header.jpg") center no-repeat;
 }
 
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+  width: 100%;
+}
+@media (max-width: 480px) {
+  .content-wrapper > section {
+    width: 100%;
+  }
+}
+@media (min-width: 481px) {
+  .content-wrapper > section {
+    width: 80%;
+  }
+}
+@media (min-width: 769px) {
+  .content-wrapper > section {
+    width: 65%;
+  }
+}
+@media (max-width: 480px) {
+  .content-wrapper p {
+    padding: 0 10% 0 10%;
+  }
+}
+@media (min-width: 481px) {
+  .content-wrapper p {
+    padding: 0 20% 0 20%;
+  }
+}
+@media (min-width: 769px) {
+  .content-wrapper p {
+    padding: 0 30% 0 30%;
+  }
+}
+.content-wrapper .italic {
+  font-style: italic;
+}
+.content-wrapper .outset > p {
+  margin: 2em 0 2em 0;
+}
+.content-wrapper .outset > img {
+  width: 100%;
+}
+@media (max-width: 480px) {
+  .content-wrapper .content img {
+    width: 100%;
+    margin-bottom: 1em;
+  }
+}
+@media (min-width: 481px) {
+  .content-wrapper .content img {
+    width: 100%;
+    margin-bottom: 1em;
+  }
+}
+@media (min-width: 769px) {
+  .content-wrapper .content img {
+    width: 10em;
+    height: 10em;
+    margin: 1em;
+    float: right;
+  }
+}
+
+.blurred-image {
+  overflow: hidden;
+}
+.blurred-image > img {
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  width: 105%;
+  height: 105%;
+  margin: -5%;
+}
+
 .overlay {
   position: relative;
   width: 100%;
@@ -73,7 +165,7 @@ header > .header-image {
   left: 0;
   width: inherit;
   height: inherit;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 /*# sourceMappingURL=styles.css.map */
