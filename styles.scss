@@ -1,15 +1,23 @@
-// VARIABLES
-$background-color: rgb(255, 255, 255);
+// VARIABLES FOR COLORS
+$primary-background-color: rgb(255, 255, 255);
+$secondary-background-color: rgb(230, 230, 230);
 
 $primary-headline-color: rgb(255, 255, 255);
 $secondary-headline-color: rgb(0, 0, 0);
+
 $primary-text-color: rgb(105, 105, 105);
 $secondary-text-color: rgb(0, 0, 0);
 
-$font-size-headline: 3em;
-$font-size-perex: 2em;
-$font-size-default: 1em;
+$icon-color: rgb(230, 230, 230);
+$icon-background-color: rgb(105, 105, 105);
 
+// VARIABLES FOR FONT SIZES
+$font-size-headline: 3.3em;
+$font-size-perex: 2em;
+$font-size-icon: 1em;
+$font-size-default: 1.1em;
+
+// OTHER VARIABLES
 $blur-value: 5px;
 
 // MEDIA QUERIES VIA MIXINS
@@ -60,7 +68,7 @@ html {
 body {
   min-width: 100%;
   margin: 0;
-  background-color: $background-color;
+  background-color: $primary-background-color;
   font-size: $font-size-default;
   color: $primary-text-color;
 }
@@ -179,6 +187,33 @@ header {
       margin: 1em;
       float: right;
     }
+  }
+}
+
+footer {
+  @include flex-center;
+  flex-flow: row nowrap;
+  width: 100%;
+  height: 7em;
+  background-color: $secondary-background-color;
+  margin-top: 2em;
+
+  // SOCIAL MEDIA ICONS
+  > .fa {
+    @include flex-center;
+    width: 0.3em;
+    height: 0.3em;
+    padding: 1em;
+    margin: 0 0.2em 0 0.2em;
+    font-size: $font-size-icon;
+    text-decoration: none;
+    border-radius: 50%;
+    background: $icon-background-color;
+    color: $icon-color;
+  }
+
+  > .fa:hover {
+    opacity: 0.7;
   }
 }
 
