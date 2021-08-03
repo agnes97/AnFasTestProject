@@ -118,7 +118,7 @@ header > .header-image {
   align-items: center;
   width: 100%;
   position: relative;
-  background: url("/assets/header.jpg") center no-repeat;
+  background: url("assets/header.jpg") center no-repeat;
   flex-grow: 1;
 }
 header .profile-picture {
