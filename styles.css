@@ -12,6 +12,7 @@ body {
   min-width: 100%;
   margin: 0;
   background-color: white;
+  font-family: "Times New Roman", Times, serif;
   font-size: 1.1em;
   color: dimgray;
 }
@@ -25,6 +26,7 @@ main {
 }
 
 h1 {
+  font-family: "Open Sans", sans-serif;
   font-size: 3.3em;
   color: white;
   text-align: center;
@@ -32,6 +34,7 @@ h1 {
 }
 
 h2 {
+  font-family: "Open Sans", sans-serif;
   font-size: 2em;
   color: black;
   text-align: center;
@@ -45,6 +48,7 @@ header {
   display: flex;
   flex-direction: column;
   min-width: 100%;
+  font-family: "Open Sans", sans-serif;
 }
 @media (max-width: 480px) {
   header {
@@ -261,7 +265,7 @@ header .profile-picture {
   transition: all linear 1s;
 }
 .content-wrapper .video-gallery .thumbnail:hover .fa {
-  transform: translate(-50%, -50%) scale(2);
+  transform: translate(-50%, -50%) scale(1.5);
 }
 
 footer {

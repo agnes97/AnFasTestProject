@@ -70,6 +70,7 @@ body {
   min-width: 100%;
   margin: 0;
   background-color: $primary-background-color;
+  font-family: "Times New Roman", Times, serif;
   font-size: $font-size-default;
   color: $primary-text-color;
 }
@@ -81,6 +82,7 @@ main {
 }
 
 h1 {
+  font-family: "Open Sans", sans-serif;
   font-size: $font-size-headline;
   color: $primary-headline-color;
   text-align: center;
@@ -88,6 +90,7 @@ h1 {
 }
 
 h2 {
+  font-family: "Open Sans", sans-serif;
   font-size: $font-size-perex;
   color: $secondary-headline-color;
   text-align: center;
@@ -102,6 +105,7 @@ header {
   display: flex;
   flex-direction: column;
   min-width: 100%;
+  font-family: "Open Sans", sans-serif;
 
   // HEADER MEDIA QUERIES
   @include phone-view {
@@ -310,7 +314,7 @@ header {
     }
 
     .thumbnail:hover .fa {
-      transform: translate(-50%, -50%) scale(2);
+      transform: translate(-50%, -50%) scale(1.5);
     }
   }
 }
