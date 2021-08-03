@@ -99,18 +99,22 @@ a {
 
 // CLASSES
 header {
+  display: flex;
+  flex-direction: column;
   min-width: 100%;
-  margin-bottom: 4em;
 
   // HEADER MEDIA QUERIES
   @include phone-view {
-    height: 20em;
+    min-height: 20em;
+    margin-bottom: 2em;
   }
   @include ipad-view {
-    height: 25em;
+    min-height: 25em;
+    margin-bottom: 4em;
   }
   @include desktop-view {
-    height: 30em;
+    min-height: 30em;
+    margin-bottom: 5em;
   }
 
   // HEADER NAV
@@ -164,7 +168,33 @@ header {
   > .header-image {
     @include flex-center;
     width: 100%;
+    position: relative;
     background: url("/assets/header.jpg") center no-repeat;
+    flex-grow: 1;
+  }
+
+  // HEADER PROFILE PICTURE
+  .profile-picture {
+    position: absolute;
+    border-radius: 50%;
+    border: 5px solid $primary-headline-color;
+    z-index: 1;
+
+    @include phone-view {
+      height: 4em;
+      width: 4em;
+      bottom: -2em;
+    }
+    @include ipad-view {
+      height: 8em;
+      width: 8em;
+      bottom: -4em;
+    }
+    @include desktop-view {
+      height: 10em;
+      width: 10em;
+      bottom: -5em;
+    }
   }
 }
 
@@ -206,7 +236,7 @@ header {
 
   // CONTENT OUTSET (FIRST SECTION)
   .outset > p {
-    margin: 3em 0 2em 0;
+    margin: 2em 0 2em 0;
   }
 
   .outset > .floating-image {

@@ -42,22 +42,26 @@ a {
 }
 
 header {
+  display: flex;
+  flex-direction: column;
   min-width: 100%;
-  margin-bottom: 4em;
 }
 @media (max-width: 480px) {
   header {
-    height: 20em;
+    min-height: 20em;
+    margin-bottom: 2em;
   }
 }
 @media (min-width: 481px) {
   header {
-    height: 25em;
+    min-height: 25em;
+    margin-bottom: 4em;
   }
 }
 @media (min-width: 769px) {
   header {
-    height: 30em;
+    min-height: 30em;
+    margin-bottom: 5em;
   }
 }
 header > nav {
@@ -109,7 +113,36 @@ header > .header-image {
   justify-content: center;
   align-items: center;
   width: 100%;
+  position: relative;
   background: url("/assets/header.jpg") center no-repeat;
+  flex-grow: 1;
+}
+header .profile-picture {
+  position: absolute;
+  border-radius: 50%;
+  border: 5px solid white;
+  z-index: 1;
+}
+@media (max-width: 480px) {
+  header .profile-picture {
+    height: 4em;
+    width: 4em;
+    bottom: -2em;
+  }
+}
+@media (min-width: 481px) {
+  header .profile-picture {
+    height: 8em;
+    width: 8em;
+    bottom: -4em;
+  }
+}
+@media (min-width: 769px) {
+  header .profile-picture {
+    height: 10em;
+    width: 10em;
+    bottom: -5em;
+  }
 }
 
 .content-wrapper {
@@ -153,7 +186,7 @@ header > .header-image {
   font-style: italic;
 }
 .content-wrapper .outset > p {
-  margin: 3em 0 2em 0;
+  margin: 2em 0 2em 0;
 }
 .content-wrapper .outset > .floating-image {
   width: 100%;
